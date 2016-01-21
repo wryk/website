@@ -1,0 +1,23 @@
+extends base
+
+block viewport
+	body.Container.Cover
+		header.Container-main
+			h1 Hi, I'm wryk
+
+			nav.Menu
+				ul
+					li: a(href='https://github.com/wryk') Github
+					li: a(href='https://twitter.com/wryk_') Twitter
+					li: a(href='mailto:hi@wryk.moe') Contact
+					
+		main.Box
+			!= page.content
+		
+		footer
+			img(src=url_for('images/avatar.png'))
+			
+			p.Box.Box--compact #[a(href='//wryk.moe') wryk.moe] is powered by #[a(href='https://hexo.io') Hexo] and is hosted on #[a(href='https://pages.github.com') GitHub Pages]
+
+block append styles
+	link(rel='stylesheet' href=url_for('styles/wryk.css'))

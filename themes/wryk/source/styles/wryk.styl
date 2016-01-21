@@ -1,0 +1,48 @@
+@import "_settings"
+@import "base/*"
+@import "module/*"
+
+body
+	flex-flow column nowrap
+	align-items center
+
+	min-width 100%
+	min-height 100%
+
+	font-family Munro, sans-serif
+	color white
+
+header
+	display flex
+	flex-direction column
+	justify-content center
+	align-items center
+
+	h1
+		margin 30px 0
+		text-align center
+		font-size 6em
+
+	nav
+		font-size 2em
+
+
+main
+	font-size 1.2em
+	max-width 720px
+
+footer
+	display flex
+	flex-direction column
+	align-items center
+	text-align center
+
+	img
+		width 192px
+		z-index 1
+
+	a
+		color primary-color
+
+		&:hover
+			text-shadow 0 0 10px primary-color
