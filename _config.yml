@@ -71,4 +71,3 @@ deploy:
   type: git
   repo: git@github.com:wryk/wryk.github.io.git
   branch: master
-  message: updated: {{now("YYYY-MM-DD HH:mm:ss")}}
