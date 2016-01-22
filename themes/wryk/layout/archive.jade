@@ -1,0 +1,10 @@
+extends base
+
+block viewport
+	ul
+		each post in page.posts.toArray()
+			li
+				a(href=url_for(post.path))= post.title
+
+block append styles
+	link(rel='stylesheet' href=url_for('styles/wryk.css'))
