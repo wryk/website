@@ -5,6 +5,8 @@ html
 			meta(charset='utf-8')
 			meta(http-equiv='X-UA-Compatible', content="IE=Edge")
 			meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1')
+			meta(name='author', content=config.author)
+			meta(name='description', content=config.description)
 
 		title
 			block title
@@ -14,10 +16,12 @@ html
 					| #{config.title}
 
 		block styles
+
+	body
+		block viewport
+			!= page.content
 			
 		block scripts
-
-	block viewport
-		body
-			block body
-				!= page.content
+		
+		block tracker
+			include ../_partials/tracker.html
