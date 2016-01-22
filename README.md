@@ -5,3 +5,8 @@
   * add about page
   * add blog pages
   * add atom feeds
+
+
+# Blog
+  * /blog/ => list all articles with a vertical timeline (paginated)
+  * /blog/* => article header and footer should be next and previous links?
