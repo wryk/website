@@ -1,0 +1,104 @@
+primary-color = #9b59b6
+base-color = #34495e
+inverted-color = #ecf0f1
+
+@font-face
+	font-family Munro
+	font-style normal
+	src url(../fonts/munro/Munro.ttf)
+
+@keyframes float
+	from
+		transform translateY(0)
+
+	to
+		transform translateY(10px)
+
+// Normalize more
+html
+	box-sizing: border-box
+
+	*, *::before, *::after
+		box-sizing: inherit
+
+	-ms-text-size-adjust 100%
+	-webkit-text-size-adjust 100%
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+	-webkit-tap-highlight-color transparent
+
+a
+	color inherit
+	text-decoration none
+
+// STYLE
+body
+	display grid
+
+	grid-template-columns 1fr
+	grid-gap 10px 15px
+
+	grid-template-areas \
+		"header" \
+		"navigation" \
+		"content"
+
+	justify-items center
+	align-items start
+
+	min-height 100vh
+
+	background-color primary-color
+	font-family Munro, sans-serif
+	color white
+
+header
+	grid-area header
+	text-align center
+
+	animation float 1s steps(2, start) infinite alternate
+
+	h1
+		// Yeah, it's a dump geek reference
+		font-size 4.2em
+
+nav
+	grid-area navigation
+
+	font-size 2em
+
+	ul
+		display flex
+		flex-flow row wrap
+
+		justify-content center
+
+		list-style-type none
+		margin 0
+		padding 0
+
+		li
+			padding 0 10px
+
+			&::before
+				content "~ "
+
+
+	a
+		transition 0.1s ease-in
+
+		&:hover
+			text-shadow 0 0 10px inverted-color
+
+
+main
+	grid-area content
+
+	font-size 1.4em
+	max-width 720px
+
+	padding 10px
+	margin 20px
+	background inverted-color
+	color base-color
+	box-shadow 8px 0 inverted-color, -8px 0 inverted-color, 0 8px inverted-color, 0 -8px inverted-color, 0 0 0 4px inverted-color
