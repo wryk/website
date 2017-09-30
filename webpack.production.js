@@ -7,17 +7,10 @@ module.exports = merge(common, {
 	module: {
 		rules: [
 			{
-				test: /\.css$/,
-				use: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
-					use: 'css-loader'
-				})
-			},
-			{
 				test: /\.styl$/,
 				use: ExtractTextPlugin.extract({
 					fallback: 'style-loader',
-					use: ['css-loader', 'stylus-loader']
+					use: ['css-loader?minimize', 'stylus-loader']
 				})
 			}
 		]
