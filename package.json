@@ -3,7 +3,7 @@
   "name": "wryk-website",
   "scripts": {
     "build": "parcel build src/index.pug",
-    "dev": "parcel src/index.pug"
+    "serve": "parcel src/index.pug"
   },
   "author": "wryk <wryk@wryk.moe>",
   "license": "UNLICENSED",
@@ -12,9 +12,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.2.4",
+    "jstransformer-markdown": "^1.2.1",
     "parcel-bundler": "^1.4.1",
-    "parcel-plugin-pug": "^0.2.1",
-    "stylus": "^0.54.5",
-    "typescript": "^2.6.2"
+    "parcel-plugin-pug": "^0.2.2",
+    "stylus": "^0.54.5"
   }
 }
