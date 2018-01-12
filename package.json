@@ -2,7 +2,7 @@
   "private": true,
   "name": "wryk-website",
   "scripts": {
-    "build": "parcel build src/index.pug",
+    "build": "parcel build src/index.pug --public-url ./",
     "serve": "parcel src/index.pug"
   },
   "author": "wryk <wryk@wryk.moe>",
