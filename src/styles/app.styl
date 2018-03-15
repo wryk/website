@@ -1,106 +1,111 @@
-@import 'normalize-css/normalize.css'
+@import 'normalize.css/normalize.css'
 
-primary-color = #9b59b6
-base-color = #34495e
-inverted-color = #ecf0f1
+:root
+	--color-primary 166, 57, 194
+	--color-secondary 217, 59, 155
+	--background-alpha 0.9
 
-@font-face
-	font-family Munro
-	font-style normal
-	src url('../fonts/munro/Munro.ttf')
-
-@keyframes float
-	from
-		transform translateY(0)
-
-	to
-		transform translateY(10px)
-
-// Normalize more
-html
-	box-sizing: border-box
-
-	*, *::before, *::after
-		box-sizing: inherit
-
-	-ms-text-size-adjust 100%
-	-webkit-text-size-adjust 100%
-	-webkit-font-smoothing antialiased
-	-moz-osx-font-smoothing grayscale
-	-webkit-tap-highlight-color transparent
-
-a
-	color inherit
-	text-decoration none
 
 // STYLE
-body
-	display grid
-
-	grid-template-columns 1fr
-	grid-gap 10px 15px
-
-	grid-template-areas \
-		"header" \
-		"navigation" \
-		"content"
-
-	justify-items center
-	align-items start
-
-	min-height 100vh
-
-	background-color primary-color
-	font-family Munro, sans-serif
+html
+	font-family Tahoma, Geneva, sans-serif
 	color white
 
-header
-	grid-area header
-	text-align center
+body
+	background-image \
+		linear-gradient(160deg, unquote('rgba(var(--color-primary), var(--background-alpha))'), unquote('rgba(var(--color-secondary), var(--background-alpha))')), \
+		url('../images/background.jpg')
 
-	animation float 1s steps(2, start) infinite alternate
+	background-position 50%, 50%
+	background-attachment fixed, fixed
 
-	h1
-		// Yeah, it's a dump geek reference
-		font-size 4.2em
+	background-size cover
+
+.title
+	display flex
+	align-items center
+	justify-content space-around
+
+	font-size 2rem
+
+img
+		height 120px
+		border-radius 50%
+		border 2px solid rgba(255, 255, 255, 0.75)
+		box-shadow 2px 2px 8px rgba(0, 0, 0, 0.25)
 
 nav
-	grid-area navigation
-
-	font-size 2em
+	font-size 1.5rem
 
 	ul
 		display flex
-		flex-flow row wrap
-
-		justify-content center
+		flex-wrap wrap
+		justify-content space-around
 
 		list-style-type none
-		margin 0
 		padding 0
 
-		li
-			padding 0 10px
+footer
+	font-size 0.9rem
 
-			&::before
-				content "~ "
+a
+	text-decoration none
+	color white
 
 
-	a
-		transition 0.1s ease-in
+// LAYOUT
+body
+	display grid
+	justify-items center
 
-		&:hover
-			text-shadow 0 0 10px inverted-color
+	min-height 100vh
 
+	box-sizing border-box
+	padding 1rem 2rem
+
+article
+	display grid
+
+	min-height 100%
+	max-width 1024px
+
+header
+	grid-area header
 
 main
 	grid-area content
 
-	font-size 1.4em
-	max-width 720px
+footer
+	grid-area footer
 
-	padding 10px
-	margin 20px
-	background inverted-color
-	color base-color
-	box-shadow 8px 0 inverted-color, -8px 0 inverted-color, 0 8px inverted-color, 0 -8px inverted-color, 0 0 0 4px inverted-color
+@media (min-width: 0px)
+	article
+		grid-template-rows auto 1fr auto
+		grid-template-columns 1fr
+
+		grid-template-areas \
+			"header" \
+			"content" \
+			"footer"
+
+	footer
+		justify-self end
+
+// --breakpoint-xs 0px
+// --breakpoint-sm 576px
+// --breakpoint-md 768px
+// --breakpoint-lg 992px
+// --breakpoint-xl 1200px
+@media (min-width: 1200px)
+	article
+		grid-template-rows 1fr auto
+		grid-template-columns 2fr 3fr
+
+		grid-template-areas \
+			"header content" \
+			"footer footer"
+
+		grid-gap 0 3rem
+
+	header, main
+		align-self center

@@ -16,11 +16,18 @@ html(lang='en')
 			link(rel='stylesheet', href='styles/app.styl')
 
 	body
-		header
-			block title
+		article
+			header
+				.title
+					img(src='./images/profile.jpg')
+						
+					block title
 
-		nav
-			block navigation
+				nav
+					block navigation
 
-		main
-			block content
+			main
+				block content
+
+			footer
+				block footer
