@@ -2,9 +2,8 @@
   "private": true,
   "name": "wryk-website",
   "scripts": {
-    "build": "npm run clean && parcel build src/index.pug --public-url ./",
-    "clean": "rm -r dist",
-    "serve": "npm run clean && parcel src/index.pug"
+    "build": "parcel build src/index.pug --public-url ./",
+    "serve": "parcel src/index.pug"
   },
   "author": "wryk <wryk@wryk.moe>",
   "license": "UNLICENSED",
