@@ -2,7 +2,6 @@
 @import url("typeface-fira-mono");
 
 /* Navigation links hover effect from https://tympanus.net/Development/CreativeLinkEffects/ */
-/* Animated Background Gradiant from https://dockyard.com/blog/2017/10/17/animating-background-gradients-pwa */
 
 :root {
 	--text-color: rgb(var(--text-color-rgb));
@@ -43,7 +42,7 @@ img {
 	height: 8rem;
 
 	border-radius: 50%;
-	border: 2px solid rgba(var(--text-color-rgb), 0.75);
+	border: 0.15rem solid var(--text-color);
 }
 
 nav {
@@ -55,7 +54,7 @@ nav {
 nav ul {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-evenly;
 
 	list-style-type: none;
 	padding: 0;
@@ -70,13 +69,13 @@ nav li::after {
 
 nav li::before {
 	margin-right: var(--bracket-margin);
-	content: '[';
+	content: "[";
 	transform: translateX(var(--bracket-margin));
 }
 
 nav li::after {
 	margin-left: var(--bracket-margin);
-	content: ']';
+	content: "]";
 	transform: translateX(calc(-1 * var(--bracket-margin)));
 }
 
@@ -87,10 +86,6 @@ nav li:focus::after {
 	opacity: 1;
 	transform: translateX(0rem);
 }
-
-
-
-
 
 footer {
 	font-size: 0.9rem;
@@ -107,12 +102,13 @@ a:hover {
 }
 
 /* LAYOUT */
-/*
-sm 576px
-md 768px
-lg 992px
-xl 1200px
-*/
+
+@custom-media --breakpoint-xs (width >= 0px);
+@custom-media --breakpoint-sm (width >= 576px);
+@custom-media --breakpoint-md (width >= 768px);
+@custom-media --breakpoint-lg (width >= 992px);
+@custom-media --breakpoint-xl (width >= 1200px);
+
 body {
 	display: grid;
 	justify-items: center;
@@ -142,7 +138,7 @@ footer {
 	grid-area: footer;
 }
 
-@media (min-width: 0px) {
+@media (--breakpoint-xs) {
 	article {
 		grid-template-rows: auto 1fr auto;
 		grid-template-columns: 1fr;
@@ -157,7 +153,7 @@ footer {
 		justify-self: end;
 	}
 }
-@media (min-width: 992px) {
+@media (--breakpoint-lg) {
 	article {
 		grid-template-rows: 1fr auto;
 		grid-template-columns: 2fr 3fr;
