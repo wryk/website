@@ -3,6 +3,27 @@
 
 /* Navigation links hover effect from https://tympanus.net/Development/CreativeLinkEffects/ */
 
+@custom-media --layout-xs-and-up (width >= 0px);
+@custom-media --layout-sm-and-up (width >= 576px);
+@custom-media --layout-md-and-up (width >= 768px);
+@custom-media --layout-lg-and-up (width >= 992px);
+@custom-media --layout-xl-and-up (width >= 1200px);
+
+/*
+	wxga 1280 720
+	hdp 1600 900
+	fhd 1920 1080
+	wqhd 2560 1440
+	4k-uhd 3840 2160
+*/
+/* 
+	@custom-media --resolution-wxga (width > 0px) or (height > 0px);
+	@custom-media --resolution-hdp (width > 1280px) or (height > 720px);
+	@custom-media --resolution-fhd (width > 1600px) or (height > 900px);
+	@custom-media --resolution-wqhd (width > 1920px) or (height > 1080px);
+	@custom-media --resolution-4k-uhd (width > 2560px) or (height > 1440px);
+*/
+
 :root {
 	--text-color: rgb(var(--text-color-rgb));
 	--text-color-rgb: 255, 255, 255;
@@ -12,21 +33,24 @@
 
 	--secondary-color: rgb(var(--secondary-color-rgb));
 	--secondary-color-rgb: 217, 59, 155;
-}
 
-html {
-	font-family: "Fira Mono", "Lucida Console", Monaco, monospace;
-	color: #fff;
-}
-
-body {
 	--background-alpha: 0.9;
 	--background-primary-color: rgba(var(--primary-color-rgb), var(--background-alpha));
 	--background-secondary-color: rgba(var(--secondary-color-rgb), var(--background-alpha));
 
+	--background-image: url("background-1920.jpg");
+	--background-overlay-image: linear-gradient(160deg, var(--background-primary-color), var(--background-secondary-color));
+}
+
+html {
+	font-family: "Fira Mono", "Lucida Console", Monaco, monospace;
+	color: var(--text-color);
+}
+
+body {
 	background:
-		linear-gradient(160deg, var(--background-primary-color), var(--background-secondary-color)) 50%/cover fixed,
-		url("background.jpg") 50%/cover fixed;
+		var(--background-overlay-image) 50%/cover fixed,
+		var(--background-image) 50%/cover fixed;
 }
 
 .title {
@@ -102,13 +126,6 @@ a:hover {
 }
 
 /* LAYOUT */
-
-@custom-media --breakpoint-xs (width >= 0px);
-@custom-media --breakpoint-sm (width >= 576px);
-@custom-media --breakpoint-md (width >= 768px);
-@custom-media --breakpoint-lg (width >= 992px);
-@custom-media --breakpoint-xl (width >= 1200px);
-
 body {
 	display: grid;
 	justify-items: center;
@@ -138,7 +155,7 @@ footer {
 	grid-area: footer;
 }
 
-@media (--breakpoint-xs) {
+@media (--layout-xs-and-up) {
 	article {
 		grid-template-rows: auto 1fr auto;
 		grid-template-columns: 1fr;
@@ -153,7 +170,8 @@ footer {
 		justify-self: end;
 	}
 }
-@media (--breakpoint-lg) {
+
+@media (--layout-lg-and-up) {
 	article {
 		grid-template-rows: 1fr auto;
 		grid-template-columns: 2fr 3fr;
