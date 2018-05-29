@@ -14,8 +14,8 @@
   "devDependencies": {
     "autoprefixer": "^7.2.6",
     "jstransformer-markdown": "^1.2.1",
-    "parcel-bundler": "^1.6.2",
-    "parcel-plugin-pug": "^0.2.7",
-    "postcss-preset-env": "^3.3.0"
+    "parcel-bundler": "^1.8.1",
+    "postcss-preset-env": "^3.5.0",
+    "pug": "^2.0.3"
   }
 }
