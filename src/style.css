@@ -9,21 +9,6 @@
 @custom-media --layout-lg-and-up (width >= 992px);
 @custom-media --layout-xl-and-up (width >= 1200px);
 
-/*
-	wxga 1280 720
-	hdp 1600 900
-	fhd 1920 1080
-	wqhd 2560 1440
-	4k-uhd 3840 2160
-*/
-/* 
-	@custom-media --resolution-wxga (width > 0px) or (height > 0px);
-	@custom-media --resolution-hdp (width > 1280px) or (height > 720px);
-	@custom-media --resolution-fhd (width > 1600px) or (height > 900px);
-	@custom-media --resolution-wqhd (width > 1920px) or (height > 1080px);
-	@custom-media --resolution-4k-uhd (width > 2560px) or (height > 1440px);
-*/
-
 :root {
 	--text-color: rgb(var(--text-color-rgb));
 	--text-color-rgb: 255, 255, 255;
@@ -38,7 +23,7 @@
 	--background-primary-color: rgba(var(--primary-color-rgb), var(--background-alpha));
 	--background-secondary-color: rgba(var(--secondary-color-rgb), var(--background-alpha));
 
-	--background-image: url("background-1920.jpg");
+	--background-image: url("background.jpg");
 	--background-overlay-image: linear-gradient(160deg, var(--background-primary-color), var(--background-secondary-color));
 }
 
@@ -53,6 +38,7 @@ body {
 		var(--background-image) 50%/cover fixed;
 }
 
+
 .title {
 	display: flex;
 	flex-wrap: wrap;
@@ -64,9 +50,11 @@ body {
 
 img {
 	height: 8rem;
+	width: 8rem;
 
-	border-radius: 50%;
+	background: var(--text-color);
 	border: 0.15rem solid var(--text-color);
+	border-radius: 50%;
 }
 
 nav {
