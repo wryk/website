@@ -23,7 +23,8 @@
 	--background-primary-color: rgba(var(--primary-color-rgb), var(--background-alpha));
 	--background-secondary-color: rgba(var(--secondary-color-rgb), var(--background-alpha));
 
-	--background-image: url("background.jpg");
+	/* background image by SVGBackgrounds.com https://www.svgbackgrounds.com/#endless-constellation */
+	--background-image: url("background.svg");
 	--background-overlay-image: linear-gradient(160deg, var(--background-primary-color), var(--background-secondary-color));
 }
 
@@ -33,9 +34,10 @@ html {
 }
 
 body {
+	background-color: var(--primary-color);
 	background:
-		var(--background-overlay-image) 50%/cover fixed,
-		var(--background-image) 50%/cover fixed;
+		var(--background-overlay-image) fixed,
+		var(--background-image) fixed;
 }
 
 
