@@ -1,5 +1,4 @@
 @import url("normalize.css");
-@import url("typeface-fira-mono");
 
 /* Navigation links hover effect from https://tympanus.net/Development/CreativeLinkEffects/ */
 
@@ -29,7 +28,7 @@
 }
 
 html {
-	font-family: "Fira Mono", "Lucida Console", Monaco, monospace;
+	font-family: "Lucida Console", Monaco, monospace;
 	color: var(--text-color);
 }
 

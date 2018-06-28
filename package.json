@@ -8,8 +8,7 @@
   "author": "wryk <wryk@wryk.moe>",
   "license": "UNLICENSED",
   "dependencies": {
-    "normalize.css": "^8.0.0",
-    "typeface-fira-mono": "0.0.54"
+    "normalize.css": "^8.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.6",
