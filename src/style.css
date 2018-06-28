@@ -37,7 +37,7 @@ body {
 	background-color: var(--primary-color);
 	background:
 		var(--background-overlay-image) fixed,
-		var(--background-image) fixed;
+		var(--background-image);
 }
 
 
