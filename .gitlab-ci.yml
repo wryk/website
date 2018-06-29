@@ -1,4 +1,4 @@
-image: node:8
+image: node:8.11.3
 
 pages:
     cache:
@@ -11,7 +11,7 @@ pages:
 
     artifacts:
         paths:
-            - dist
+            - public
 
     only:
         - production
