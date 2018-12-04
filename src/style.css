@@ -125,7 +125,7 @@ body {
 	padding: 1rem 2rem;
 }
 
-article {
+.container {
 	display: grid;
 
 	min-height: 100%;
@@ -145,7 +145,7 @@ footer {
 }
 
 @media (--layout-xs-and-up) {
-	article {
+	.container {
 		grid-template-rows: auto 1fr auto;
 		grid-template-columns: 1fr;
 
@@ -161,7 +161,7 @@ footer {
 }
 
 @media (--layout-lg-and-up) {
-	article {
+	.container {
 		grid-template-rows: 1fr auto;
 		grid-template-columns: 2fr 3fr;
 		grid-gap: 0 3rem;
