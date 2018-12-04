@@ -1,5 +1,8 @@
 extends layout.pug
 
+block append meta
+	link(rel='me' href='https://eldritch.cafe/@milia')
+
 block head_title
 	| wryk
 
@@ -14,9 +17,6 @@ block navigation
 		* [XMPP](xmpp:wryk@movim.eu)
 		* [Github](https://github.com/wryk)
 		* [Keybase](https://keybase.io/wryk)
-
-	// hidden for now (I want to get validation)
-	a(href='https://eldritch.cafe/@milia' rel='me' hidden style='display: none;')
 
 block content
 	:markdown
