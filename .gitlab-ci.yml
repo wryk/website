@@ -1,17 +1,41 @@
-image: node:8.11.3
+image: node:10
 
-pages:
-    cache:
-        paths:
-            - node_modules/
+cache:
+    paths:
+        - node_modules/
+
+stages:
+    - build
+    - deploy
+
+build:
+    stage: build
 
     script:
-        - npm install
         - npm run build
 
     artifacts:
         paths:
             - public
 
+# pages:
+#     stage: deploy
+
+#     artifacts:
+#         paths:
+#             - public
+
+#     only:
+#         - production
+
+deploy:netlify:
+    stage: deploy
+
     only:
         - production
+
+    script:
+        - npm i -g netlify-cli
+        - netlify deploy -s $NETLIFY_SITE_ID -p public -t $NETLIFY_ACCESS_TOKEN -e production
+
+
