@@ -16,7 +16,6 @@ build:
     stage: build
 
     script:
-        - npm i
         - npm run build
 
     artifacts:
@@ -30,6 +29,7 @@ deploy:netlify:
         - production
 
     script:
+        - cp netlify/* dist
         - npm i -g netlify-cli
         - netlify deploy --prod --dir "dist" --message "${CI_COMMIT_TITLE}"
 
