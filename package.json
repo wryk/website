@@ -2,7 +2,7 @@
   "private": true,
   "name": "wryk-website",
   "scripts": {
-    "build": "parcel build src/index.pug --public-url . --out-dir public",
+    "build": "parcel build src/index.pug",
     "serve": "parcel src/index.pug"
   },
   "author": "wryk <wryk@wryk.moe>",
@@ -13,8 +13,14 @@
   "devDependencies": {
     "autoprefixer": "^9.3.1",
     "jstransformer-markdown": "^1.2.1",
-    "parcel-bundler": "^1.10.3",
+    "parcel-bundler": "^1.12.2",
+    "parcel-plugin-static-files-copy": "^2.0.0",
     "postcss-preset-env": "^6.4.0",
     "pug": "^2.0.3"
+  },
+  "staticFiles": {
+    "staticPath": [
+      "netlify"
+    ]
   }
 }
