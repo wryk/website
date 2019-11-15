@@ -29,7 +29,7 @@ deploy:netlify:
         - production
 
     script:
-        - cp netlify/* dist
+        - cp netlify.toml dist/
         - npm i -g netlify-cli
         - netlify deploy --prod --dir "dist" --message "${CI_COMMIT_TITLE}"
 
