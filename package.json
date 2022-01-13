@@ -1,20 +1,21 @@
 {
-  "private": true,
-  "name": "wryk-website",
-  "scripts": {
-    "build": "parcel build src/index.pug",
-    "serve": "parcel src/index.pug"
-  },
-  "author": "wryk <wryk@wryk.moe>",
   "license": "UNLICENSED",
+  "source": "src/index.pug",
+  "scripts": {
+    "build": "parcel build",
+    "deploy": "netlify deploy --prod --build -d dist",
+    "dev": "parcel"
+  },
   "dependencies": {
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "^9.3.1",
+    "@parcel/transformer-pug": "^2.2.0",
+    "autoprefixer": "^10.4.2",
     "jstransformer-markdown": "^1.2.1",
-    "parcel-bundler": "^1.12.2",
-    "postcss-preset-env": "^6.4.0",
-    "pug": "^2.0.3"
+    "netlify-cli": "^8.8.0",
+    "parcel": "^2.2.0",
+    "postcss": "^8.1.0",
+    "postcss-preset-env": "^7.2.3"
   }
 }
