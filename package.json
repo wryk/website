@@ -6,11 +6,10 @@
     "dev": "parcel"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1",
     "@parcel/transformer-pug": "^2.10.1",
     "autoprefixer": "^10.4.16",
     "jstransformer-markdown": "^1.2.1",
-    "netlify-cli": "^16.9.2",
+    "normalize.css": "^8.0.1",
     "parcel": "^2.10.1",
     "postcss": "^8.4.31",
     "postcss-preset-env": "^9.2.0"
