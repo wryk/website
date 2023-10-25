@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> { } }:
 with pkgs; mkShell {
   buildInputs = [
-    nodejs-16_x
-    nodePackages.yarn
+    nodejs-18_x
+    nodePackages.pnpm
   ];
 }
